@@ -4,7 +4,16 @@ const { MongoClient } = require("mongodb");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+
+// Konfigurasi CORS untuk mengizinkan domain spesifik
+const corsOptions = {
+  origin: "https://my-portfolio-v-1-2.vercel.app", // Ganti dengan domain yang diizinkan
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions)); // Aktifkan middleware CORS dengan opsi
 const port = process.env.PORT || 3001;
 const url = process.env.MONGODB_URL;
 const dbName = "contact";
