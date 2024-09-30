@@ -7,7 +7,7 @@ const app = express();
 
 // Konfigurasi CORS untuk mengizinkan domain spesifik
 const corsOptions = {
-  origin: "https://my-portfolio-v-1-2.vercel.app", // Ganti dengan domain yang diizinkan
+  origin: "*", // Ganti dengan domain yang diizinkan
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
